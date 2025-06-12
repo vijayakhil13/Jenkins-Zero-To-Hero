@@ -8,9 +8,10 @@ pipeline{
     }
     stages{
         stage('check out'){
+steps{
             //sh 'cd  java-maven-sonar-argocd-helm-k8s/spring-boot-app'
             echo "code checkout done"
-        }
+        }}
 
 stage('build and test'){
     steps{
