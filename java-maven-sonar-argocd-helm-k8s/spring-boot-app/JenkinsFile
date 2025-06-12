@@ -24,7 +24,7 @@ stage('build and test'){
             SONAR_URL= "http://35.173.134.99:9000"
         }
         steps{
-        withCreditals([string(creditalsId:'sonar_id', variable:'SONAR_AUTH')])
+        withCredentials([string(credentialsId:'sonar_id', variable:'SONAR_AUTH')])
         {
             sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH -Dsonar.host.url= ${SONAR_URL} '
         }}
@@ -33,7 +33,7 @@ stage('build and test'){
     stage('docker images build'){
         environment{
             docker_image= "vinnethvinni/jenkins-projects:${BUILD_NUMBER}"
-            docker_credentials= creditals('docker_cred')
+            docker_credentials= credentials('docker_cred')
         }
         steps{
             script{
@@ -50,7 +50,7 @@ stage('build and test'){
                 git_username= "vijayakhil13"
             }
             steps{
-            withCreditals([string(crediantialsId:'git_cred', variable: 'GITHUB_TOKEN')]){
+            withCredentials([string(credentialsId:'git_cred', variable: 'GITHUB_TOKEN')]){
                 sh '''
                 git config user.name= "vijayakhil13"
                 git config user.email= "vijayakhil13@gmail.com'
