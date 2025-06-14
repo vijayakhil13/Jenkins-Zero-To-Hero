@@ -14,34 +14,38 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version> <!-- Updated to a version that supports Java 17 -->
+        <version>2.7.0</version> <!-- This version supports Java 17 -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version> <!-- Updated to Java 17 -->
+        <java.version>17</java.version> <!-- Set to Java 17 -->
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.7.0</version> <!-- Ensure this version is compatible with Java 17 -->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>2.7.0</version> <!-- Ensure this version is compatible with Java 17 -->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.7.0</version> <!-- Ensure this version is compatible with Java 17 -->
             <scope>test</scope>
         </dependency>
-        <!-- Debugging -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <version>2.7.0</version> <!-- Ensure this version is compatible with Java 17 -->
             <optional>true</optional>
         </dependency>
+        <!-- Add any additional dependencies here -->
     </dependencies>
 
     <build>
@@ -49,7 +53,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.10.1</version> <!-- Updated to support Java 17 -->
                 <configuration>
                     <source>${java.version}</source> <!-- Use the Java version from properties -->
                     <target>${java.version}</target> <!-- Use the Java version from properties -->
@@ -58,7 +62,12 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version> <!-- Use a version compatible with Java 17 -->
+                <version>4.0.0.4121</version> <!-- Ensure this version is compatible with Java 17 -->
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.0</version> <!-- Ensure this version is compatible with Java 17 -->
             </plugin>
         </plugins>
     </build>
