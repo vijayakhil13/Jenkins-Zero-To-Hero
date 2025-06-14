@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="2.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -14,12 +14,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version> <!-- Updated to a version that supports Java 17 -->
+        <version>2.7.0</version> <!-- Updated to a version that supports Java 11 -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
+        <java.version>11</java.version> <!-- Updated to Java 11 -->
     </properties>
 
     <dependencies>
@@ -45,20 +45,14 @@
     </dependencies>
 
     <build>
-        <finalName>spring-boot-web</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.0</version> <!-- Updated to match the parent version -->
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <source>17</source> <!-- Specify source version -->
-                    <target>17</target> <!-- Specify target version -->
+                    <source>${java.version}</source> <!-- Use the Java version from properties -->
+                    <target>${java.version}</target> <!-- Use the Java version from properties -->
                 </configuration>
             </plugin>
         </plugins>
