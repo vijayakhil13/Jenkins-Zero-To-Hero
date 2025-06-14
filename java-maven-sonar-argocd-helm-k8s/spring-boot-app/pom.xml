@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version> <!-- Ensure this version is compatible with Java 17 -->
+                <version>3.9.0.2115</version> <!-- Ensure this version is compatible with Java 17 -->
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
