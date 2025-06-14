@@ -55,8 +55,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version> <!-- Updated to support Java 17 -->
                 <configuration>
-                    <source>${java.version}</source> <!-- Use the Java version from properties -->
-                    <target>${java.version}</target> <!-- Use the Java version from properties -->
+                    <source>17</source> <!-- Use the Java version from properties -->
+                    <target>17{java.version}</target> <!-- Use the Java version from properties -->
                 </configuration>
             </plugin>
             <plugin>
